@@ -12,7 +12,8 @@ const boxes = document.querySelectorAll(".gridBox");
 
 boxes.forEach(box => {
     box.addEventListener('mouseenter', () => {
-        box.style.backgroundColor = 'yellow';
+        const color = `#` + Math.trunc(Math.random()*1000000);
+        box.style.backgroundColor = color;
     });
 });
 
