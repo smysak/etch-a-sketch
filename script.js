@@ -23,7 +23,6 @@ boxes.forEach(box => {
     });
 });
 
-
 const reset = document.getElementById("resetButton");
 reset.addEventListener('click', () => {
     let gridWidth = prompt("What size canvas would you like?", "enter pixel width");
@@ -41,8 +40,10 @@ reset.addEventListener('click', () => {
         }
         const boxes = document.querySelectorAll(".gridBox");
         boxes.forEach(box => {
+            let lightness = 100;
             box.addEventListener('mouseenter', () => {
-                box.style.backgroundColor = 'black';
+                lightness = Math.max(0, lightness -10);
+                box.style.backgroundColor = `hsl(210, 0%, ${lightness}%)`;
             });
         });
     });
