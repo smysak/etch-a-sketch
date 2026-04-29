@@ -4,6 +4,7 @@ for (let i = 0; i < 16; i++) {
     const gridDiv = document.createElement('div');
     gridDiv.id = `box ${i + 1}`;
     gridDiv.className = "gridBox";
+    gridDiv.style.minWidth = Math.sqrt(16)/16*100 + `%`;
     container.appendChild(gridDiv);
 }
 
@@ -21,3 +22,23 @@ boxes.forEach(box => {
     });
 });
 
+
+const reset = document.getElementById("resetButton");
+reset.addEventListener('click', () => {
+    const gridWidth = prompt("What size canvas would you like?", "enter pixel width");
+    container.replaceChildren();
+    const gridSize = gridWidth * gridWidth;
+        for (let i = 0; i < gridSize; i++) {
+            const gridDiv = document.createElement('div');
+            gridDiv.id = `box ${i + 1}`;
+            gridDiv.className = "gridBox";
+            gridDiv.style.minWidth = Math.sqrt(gridSize)/gridSize*100 + `%`;
+            container.appendChild(gridDiv);
+        }
+    });
+
+
+/* 
+//notes to create the "etch a sketch" blacken gradual style...
+box.style.backgroundColor = 'color-mix(in hsl, (0 0 100), black 10%)';
+*/
