@@ -35,6 +35,17 @@ reset.addEventListener('click', () => {
             gridDiv.style.minWidth = Math.sqrt(gridSize)/gridSize*100 + `%`;
             container.appendChild(gridDiv);
         }
+        const boxes = document.querySelectorAll(".gridBox");
+        boxes.forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.backgroundColor = 'yellow';
+            });
+        });
+        boxes.forEach(box => {
+            box.addEventListener('mouseleave', () => {
+                box.style.backgroundColor = 'white';
+            });
+        });
     });
 
 
