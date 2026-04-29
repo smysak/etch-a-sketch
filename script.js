@@ -41,12 +41,7 @@ reset.addEventListener('click', () => {
         const boxes = document.querySelectorAll(".gridBox");
         boxes.forEach(box => {
             box.addEventListener('mouseenter', () => {
-                box.style.backgroundColor = 'yellow';
-            });
-        });
-        boxes.forEach(box => {
-            box.addEventListener('mouseleave', () => {
-                box.style.backgroundColor = 'white';
+                box.style.backgroundColor = 'black';
             });
         });
     });
