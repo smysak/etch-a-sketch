@@ -25,7 +25,10 @@ boxes.forEach(box => {
 
 const reset = document.getElementById("resetButton");
 reset.addEventListener('click', () => {
-    const gridWidth = prompt("What size canvas would you like?", "enter pixel width");
+    let gridWidth = prompt("What size canvas would you like?", "enter pixel width");
+    while (gridWidth !== null && gridWidth > 100) {
+        gridWidth = prompt("Maximum pixel width is 100.\nPlease enter a numerical value between 1 and 100.", "enter pixel width");
+    }
     container.replaceChildren();
     const gridSize = gridWidth * gridWidth;
         for (let i = 0; i < gridSize; i++) {
