@@ -25,7 +25,7 @@ boxes.forEach(box => {
 
 const reset = document.getElementById("resetButton");
 reset.addEventListener('click', () => {
-    let gridWidth = prompt("What size canvas would you like?", "enter pixel width");
+    let gridWidth = prompt("What size canvas would you like?\nNumeric integers up to 100 are accepted.", "enter pixel width");
     while (gridWidth !== null && gridWidth > 100) {
         gridWidth = prompt("Maximum pixel width is 100.\nPlease enter a numerical value between 1 and 100.", "enter pixel width");
     }
@@ -46,6 +46,7 @@ reset.addEventListener('click', () => {
                 box.style.backgroundColor = `hsl(210, 0%, ${lightness}%)`;
             });
         });
+        reset.textContent="reset";
     });
 
 
